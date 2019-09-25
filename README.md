@@ -12,7 +12,7 @@ An app is designed to detect and recognize face expression (and partially expres
 
 Body-language's sheets described by _Amanda Patterson_ provides an information about specific "translations". It's best way to understand the purposes of the experiment and idea of image recognition shown below.
 
-Example:
+_Example:_
 
 ![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/readme-images/Cheat-Sheets-For-Body-Language-Part-1.jpg)
 
@@ -20,7 +20,7 @@ Example:
 
 Main character of tv-series _Lie to Me_ (played by an american actor _Tim Roth_) is psychologist being an extraoridinary specialist of emotions recognition based on facial expressions.
 
-Example:
+_Example:_
 
 ![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/tim_roth_images/5.-Paul-Ekman-lie-detector-.jpg)
 
@@ -41,7 +41,7 @@ predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 Enumerating through detections and using ready-made predictor (code above) gives us a result (using CLAHE image - _Contrast Limited Adaptive Histogram Equalization_) which is shape of detected face.
 
-An example of interesting landmarks:
+_An example of interesting landmarks:_
 
 ![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/readme-images/example-of-interesting-landmarks.PNG)
 
@@ -80,10 +80,32 @@ else:
 	expression.input['eyebrows'] = 0.5
 ```	
 
-Assumption:
+_Assumption:_
 
 The center of the eyebrows is lower than those side-borders. It provides us an `eyebrows` value (_Skfuzzy Control System_ input) as `poor`. It could means that the person is in anger as shown below.
 
-Example:
+_Example:_
 
 ![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/readme-images/eyebrows-down.PNG)
+
+It's simplest example but values could be also more sophisticated (using _landmarks_ like above there could be geometrical calculation like angle or more specific form that provides more than 3 states of `eyebrows`).
+
+Although _Smile Detection_ presented in source-code is valued between 0 to 1 (smiled or not) there is shown interesting method called _Haar Cascades Detection_ which allows to use ready-made and well trained _xml-cascade_-s using `OpenCV`'s `CascadeClassifier`.
+
+#### Result
+
+Application uses `mss` library to capture an image from selected on-screen location.* Captured image is processed by following code after _Q_-keypressed.
+
+_Example_:
+
+![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/readme-images/anger.PNG)
+
+```python
+emotion.view(sim=expression)
+```
+
+As a result of our specified "emotions universe" with `expression` _simulation_ there would be viewed diagram of fuzzed values provided in mentioned rules and definitions based on _Tim Roth Coefficient`_, as below:
+
+![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/readme-images/trc-anger.PNG)
+
+* - (The reason is I've got no camera on my computer, so I do use _Playstation 3_ camera, which has no proper drivers on _Windows 10_).
