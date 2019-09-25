@@ -62,8 +62,28 @@ expression.input['eyebrows'] = 0.5
 expression.compute()
 ```
 
-We consider an array between 0 to 1 with 0.1 step with 0.5 valued input. It provides an information it's `average` (between `poor` or `good` values described by auto-membership function).
+We consider an array between _0_ to _1_ with _0.1_ step with _0.5_ valued input. It provides an information it's `average` (between `poor` or `good` values described by _auto-membership function_).
 
 Defining `rule` of `fear` emotion (skiping `mouth` definition) there's possibility to introduce _Fuzzy Control System_ named `expression_ctrl` which has `expression` - _Simulation_.
 
 It could be computed but it has to be filled by specific values provided by _landmarks_ coordinates and calculations between them.
+
+#### Dummy Eyebrows-Expression's Input
+
+Going through specific coordinates which are defined by `Shape Predictor` authors:
+
+```python
+# Eyebrows down
+if shape.part(leftPartOfLeftEyebrow).y < shape.part(rightPartOfLeftEyebrow).y or shape.part(leftPartOfRightEyebrow).y < shape.part(rightPartOfRightEyebrow).y:
+	expression.input['eyebrows'] = 0
+else:
+	expression.input['eyebrows'] = 0.5
+```	
+
+Assumption:
+
+The center of the eyebrows is lower than those side-borders. It provides us an `eyebrows` value (_Skfuzzy Control System_ input) as `poor`. It could means that the person is in anger as shown below.
+
+Example:
+
+![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/readme-images/eyebrows-down.PNG)
