@@ -44,3 +44,26 @@ Enumerating through detections and using ready-made predictor (code above) gives
 An example of interesting landmarks:
 
 ![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/readme-images/example-of-interesting-landmarks.PNG)
+
+#### Skfuzzy Control System
+
+Going through an eyebrows example:
+
+```python
+eyebrows = ctrl.Antecedent(np.arange(0, 1, 0.1), 'eyebrows')
+eyebrows.automf(3)
+
+rule = ctrl.Rule(eyebrows['poor'] & mouth['good'], emotion['fear'])
+
+expression_ctrl = ctrl.ControlSystem([rule])
+expression = ctrl.ControlSystemSimulation(expression_ctrl)
+
+expression.input['eyebrows'] = 0.5
+expression.compute()
+```
+
+We consider an array between 0 to 1 with 0.1 step with 0.5 valued input. It provides an information it's `average` (between `poor` or `good` values described by auto-membership function).
+
+Defining `rule` of `fear` emotion (skiping `mouth` definition) there's possibility to introduce _Fuzzy Control System_ named `expression_ctrl` which has `expression` - _Simulation_.
+
+It could be computed but it has to be filled by specific values provided by _landmarks_ coordinates and calculations between them.
