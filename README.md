@@ -43,4 +43,4 @@ Enumerating through detections and using ready-made predictor (code above) gives
 
 An example of interesting landmarks:
 
-![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/readme-images/example-of-interesting-landmarks.png)
+![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/readme-images/example-of-interesting-landmarks.PNG)
