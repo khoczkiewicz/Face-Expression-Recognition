@@ -104,7 +104,7 @@ _Example_:
 emotion.view(sim=expression)
 ```
 
-As a result of our specified "emotions universe" with `expression` _simulation_ there would be viewed a diagram of fuzzed values provided in mentioned rules and definitions based on _Tim Roth Coefficient`_, as below:
+As a result of our specified "emotions universe" with `expression` _simulation_ there would be viewed a diagram of fuzzed values provided in mentioned rules and definitions based on _Tim Roth Coefficient_, as below:
 
 ![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/readme-images/trc-anger.PNG)
 
