@@ -5,15 +5,15 @@ Face expression recognition using fuzzy control system (scikit-fuzzy)
 ## Requirements
 
 * _Jupyter Notebook_ with _Python 3.7_
-* Libs:
 
-- numpy
-- opencv-python
-- scikit-fuzzy
-- Pillow
-- dlib (*Caution:* _Anaconda_'s `conda install -c conda-forge dlib` would be useful)
-- mss (_ver. 2.0.22_)
+#### Libs:
 
+* numpy
+* opencv-python
+* scikit-fuzzy
+* Pillow
+* dlib (Caution: _Anaconda_'s `conda install -c conda-forge dlib` would be useful)
+* mss (_ver. 2.0.22_)
 
 ## Introduction
 
