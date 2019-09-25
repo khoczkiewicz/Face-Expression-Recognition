@@ -40,3 +40,7 @@ predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 ```
 
 Enumerating through detections and using ready-made predictor (code above) gives us a result (using CLAHE image - _Contrast Limited Adaptive Histogram Equalization_) which is shape of detected face.
+
+An example of interesting landmarks:
+
+![](https://github.com/khoczkiewicz/Face-Expression-Recognition/blob/master/readme-images/example-of-interesting-landmarks.png)
